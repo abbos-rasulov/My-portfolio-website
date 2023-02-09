@@ -1,8 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}About page {% endblock %}
+{% block root %}
 <main class="site-wrapper">
   <div class="pt-table">
     <div class="pt-tablecell page-about relative">
       <!-- .close -->
-      <a href="./" class="page-close"><i class="tf-ion-close"></i></a>
+      <a href="../../theme" class="page-close"><i class="tf-ion-close"></i></a>
       <!-- /.close -->
 
       <div class="container">
@@ -10,15 +14,15 @@
           <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
             <div class="page-title text-center">
               <h2>About <span class="primary">me</span> <span class="title-bg">Name</span></h2>
-              <p>I am working as a professional UI/UX Designer since 2007. Worked in more than 200 live projects and
-                also with more than 120 different clients!</p>
+              <p>I have been working as a python backend developer since 2022. Worked in more than 10 live projects and
+                also with different clients! I like to challenge myself, pick up new knowledge also good experience.Thus I am ready to help you with your matters !</p>
             </div>
           </div>
 
           <div class="col-xs-12 col-md-6">
             <div class="about-author">
               <figure class="author-thumb">
-                <img src="../static/images/author.jpg" alt="">
+                <img src="../../static/images/author.jpg" alt="">
               </figure> <!-- /.author-bio -->
               <div class="author-desc">
                 <p><b>Date of birth:</b> 29th july, 1984</p>
@@ -87,9 +91,9 @@
       <nav class="page-nav clear">
   <div class="container">
     <div class="flex flex-middle space-between">
-      <span class="prev-page"><a href="../portfolio/templates/welcome.html" class="link">&larr; Prev Page</a></span>
+      <span class="prev-page"><a href="{% url 'welcome' %}" class="link">&larr; Prev Page</a></span>
       <span class="copyright">Copyright &copy; 2021, Designed &amp; Developed by <a href="https://themefisher.com/">Themefisher</a>.</span>
-      <span class="next-page"><a href="services.html" class="link">Next Page &rarr;</a></span>
+      <span class="next-page"><a href="../../theme/services.html" class="link">Next Page &rarr;</a></span>
     </div>
   </div>
   <!-- /.page-nav -->
@@ -98,18 +102,5 @@
     </div> <!-- /.pt-tablecell -->
   </div> <!-- /.pt-table -->
 </main> <!-- /.site-wrapper -->
+{% endblock %}
 
-
-<!-- 
-Essential Scripts
-=====================================-->
-<script src="../static/plugins/jquery-2.2.4.min.js"></script>
-<script src="../static/plugins/bootstrap/bootstrap.min.js"></script>
-<script src="../static/plugins/jquery.nicescroll.min.js"></script>
-<script src="../static/plugins/isotope/isotope.pkgd.min.js"></script>
-<script src="../static/plugins/slick/slick.min.js"></script>
-
-<script src="../static/js/script.js"></script>
-
-</body>
-</html>
