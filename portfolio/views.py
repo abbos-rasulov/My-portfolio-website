@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Skill
+from .models import Skill, Service
 
 
 def index(request):
@@ -19,4 +19,8 @@ def about(request):
 
 
 def services(request):
-    return render(request, 'services.html')
+    services = Service.objects.all()
+    ctx = {
+        'services': services,
+    }
+    return render(request, 'services.html', ctx)
