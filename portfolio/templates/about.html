@@ -15,75 +15,45 @@
             <div class="page-title text-center">
               <h2>About <span class="primary">me</span> <span class="title-bg">Name</span></h2>
               <p>I have been working as a python backend developer since 2022. Worked in more than 10 live projects and
-                also with different clients! I like to challenge myself, pick up new knowledge also good experience.Thus I am ready to help you with your matters !</p>
+                also with different clients! I like to challenge myself, pick up new knowledge and also good experience.Thus I am ready to help you with your matters !</p>
             </div>
           </div>
 
           <div class="col-xs-12 col-md-6">
             <div class="about-author">
               <figure class="author-thumb">
-                <img src="../../static/images/author.jpg" alt="">
+                <img src="../../static/images/aba_photo.jpg" alt="">
               </figure> <!-- /.author-bio -->
               <div class="author-desc">
-                <p><b>Date of birth:</b> 29th july, 1984</p>
-                <p><b>Language:</b> English, Spanish</p>
-                <p><b>Expert in:</b> UI/UX, Web development</p>
-                <p><b>Freelance:</b> Available</p>
+                <p><b>Date of birth:</b> 21th september, 2001</p>
+                <p><b>Language:</b> Uzbek, English</p>
+                <p><b>Expert in:</b> Web development</p>
+                <p><b>Team:</b> Available</p>
+                <p><b>Born:</b> Uzbekistan</p>
               </div>
               <!-- /.author-desc -->
             </div> <!-- /.about-author -->
-            <p>I'm a multi-award winning designer that has been specialising in web design for the past three years
-              although I have experience in branding and print.Projects.</p>
+            <p> I am an experienced  data analyst with a huge interest in projects that require both creative and
+                analytical thinking. And also I am a python backend developer who is proficient in both Django framework
+                and Django REST framework. My passion lies in learning about the latest
+                technologies and up-to-date informations about IT. By the way I have 1+ years of experience in this field.</p>
           </div> <!-- /.col -->
 
           <div class="col-xs-12 col-md-6">
             <div class="section-title clear">
               <h3>Skills</h3>
             </div>
+              {% for skill in skills %}
             <div class="skill-wrapper">
               <div class="progress clear">
-                <div class="skill-name">Photoshop</div>
+                <div class="skill-name">{{ skill.name }}</div>
                 <div class="skill-bar">
                   <div class="bar"></div>
                 </div>
-                <div class="skill-lavel" data-skill-value="90%"></div>
-              </div> <!-- /.progress -->
-              <div class="progress clear">
-                <div class="skill-name">Illustrator</div>
-                <div class="skill-bar">
-                  <div class="bar"></div>
-                </div>
-                <div class="skill-lavel" data-skill-value="78%"></div>
-              </div> <!-- /.progress -->
-              <div class="progress clear">
-                <div class="skill-name">After Fffects</div>
-                <div class="skill-bar">
-                  <div class="bar"></div>
-                </div>
-                <div class="skill-lavel" data-skill-value="85%"></div>
-              </div> <!-- /.progress -->
-              <div class="progress clear">
-                <div class="skill-name">HTML5</div>
-                <div class="skill-bar">
-                  <div class="bar"></div>
-                </div>
-                <div class="skill-lavel" data-skill-value="95%"></div>
-              </div> <!-- /.progress -->
-              <div class="progress clear">
-                <div class="skill-name">WordPress</div>
-                <div class="skill-bar">
-                  <div class="bar"></div>
-                </div>
-                <div class="skill-lavel" data-skill-value="70%"></div>
-              </div> <!-- /.progress -->
-              <div class="progress clear">
-                <div class="skill-name">jQuery</div>
-                <div class="skill-bar">
-                  <div class="bar"></div>
-                </div>
-                <div class="skill-lavel" data-skill-value="75%"></div>
+                <div class="skill-lavel" data-skill-value=""></div>
               </div> <!-- /.progress -->
             </div> <!-- /.skill-wrapper -->
+            {% endfor %}
           </div> <!-- /.col -->
         </div> <!-- /.row -->
       </div> <!-- /.container -->
@@ -92,8 +62,7 @@
   <div class="container">
     <div class="flex flex-middle space-between">
       <span class="prev-page"><a href="{% url 'welcome' %}" class="link">&larr; Prev Page</a></span>
-      <span class="copyright">Copyright &copy; 2021, Designed &amp; Developed by <a href="https://themefisher.com/">Themefisher</a>.</span>
-      <span class="next-page"><a href="../../theme/services.html" class="link">Next Page &rarr;</a></span>
+      <span class="next-page"><a href="{% url 'services' %}" class="link">Next Page &rarr;</a></span>
     </div>
   </div>
   <!-- /.page-nav -->
