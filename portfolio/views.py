@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Skill, Service
+from .models import Skill, Service, Experience, Education
 
 
 def index(request):
@@ -27,7 +27,13 @@ def services(request):
 
 
 def resume(request):
-    return render(request, 'resume.html')
+    experiences = Experience.objects.all()
+    educations = Education.objects.all()
+    ctx = {
+        'educations': educations,
+        'experiences': experiences,
+    }
+    return render(request, 'resume.html', ctx)
 
 
 def works(request):
