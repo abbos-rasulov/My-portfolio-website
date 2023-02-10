@@ -24,3 +24,19 @@ def services(request):
         'services': services,
     }
     return render(request, 'services.html', ctx)
+
+
+def resume(request):
+    return render(request, 'resume.html')
+
+
+def works(request):
+    return render(request, 'works.html')
+
+
+def contact(request):
+    return render(request, 'contact.html')
+
+
+def testimonials(request):
+    return render(request, 'testimonials.html')
