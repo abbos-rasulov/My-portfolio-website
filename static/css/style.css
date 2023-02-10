@@ -525,6 +525,7 @@ label {
   align-items: center;
   display: -moz-flex;
   display: flex;
+  width: 160px;
 }
 .progress > div {
   color: #fff;
@@ -1355,6 +1356,7 @@ label {
   }
   .progress {
     display: block;
+    /*width: 160px;*/
   }
   .progress .skill-name {
     border-right: 0;
