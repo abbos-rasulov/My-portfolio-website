@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Skill, Service, Experience, Education
+from .models import Skill, Service, Experience, Education, UserContact
 
 
 def index(request):
@@ -41,6 +41,13 @@ def works(request):
 
 
 def contact(request):
+    if request.POST:
+        model = UserContact()
+        model.name = request.POST.get('name', None)
+        model.email = request.POST.get('email', None)
+        model.subject = request.POST.get('subject', None)
+        model.message = request.POST.get('message', None)
+        model.save()
     return render(request, 'contact.html')
 
 

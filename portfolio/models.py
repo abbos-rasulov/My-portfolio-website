@@ -41,3 +41,19 @@ class Experience(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class UserContact(models.Model):
+    name = models.CharField(max_length=200)
+    email = models.EmailField(max_length=70)
+    subject = models.CharField(max_length=200,
+                               blank=True,
+                               null=True)
+    message = models.TextField()
+
+    class Meta:
+        verbose_name = 'usercontact'
+        verbose_name_plural = 'usercontacts'
+
+    def __str__(self):
+        return self.name
