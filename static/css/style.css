@@ -519,12 +519,11 @@ label {
 .progress {
   background-color: #1e2530;
   border-radius: 2px;
-  height: auto;
   min-height: 45px;
   -moz-align-items: center;
   align-items: center;
   display: -moz-flex;
-  display: flex;
+  display: inline-flex;
   width: 160px;
 }
 .progress > div {
