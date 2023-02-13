@@ -15,13 +15,17 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+import environ     #pip install django-environ git hubga push qiganda ochib ketadi faqat pycharmda qoladi
 
+env = environ.Env()
+environ.Env.read_env()
+
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+SECRET_KEY = env('SECRET_KEY')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-t&7biv=999)#cho4c$@mr$1ba$bb!^75!g21nnr88#m^0jn%ys'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -130,3 +134,12 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+""" To send messages to email . We have to
+        add these codes here  """
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'  # that never change
+EMAIL_PORT = 587  # if you want to send messages to global
+EMAIL_HOST_USER = env('EMAIL_HOST_USER') # your own email
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')  # your mail passport which you got it by google
