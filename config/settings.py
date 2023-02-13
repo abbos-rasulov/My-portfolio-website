@@ -140,6 +140,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
         add these codes here  """
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'  # that never change
-EMAIL_PORT = 587  # if you want to send messages to global
+EMAIL_PORT = env('EMAIL_PORT')  # if you want to send messages to global
 EMAIL_HOST_USER = env('EMAIL_HOST_USER') # your own email
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')  # your mail passport which you got it by google
