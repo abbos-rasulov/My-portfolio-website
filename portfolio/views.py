@@ -61,5 +61,5 @@ def contact(request):
     return render(request, 'contact.html')
 
 
-def testimonials(request):
-    return render(request, 'testimonials.html')
+def team(request):
+    return render(request, 'team.html')
