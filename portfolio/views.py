@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Skill, Service, Experience, Education, UserContact
 from django.core.mail import send_mail
 
+
 def index(request):
     return render(request, 'index.html')
 
@@ -53,8 +54,8 @@ def contact(request):
         email = request.POST.get('email')
         message = f"{request.POST.get('name')} who is a" \
                   f" {subject} sent you the message : " \
-                  f"{request.POST.get('message')} from the mail :{email}"
-        send_mail(subject, message,'abbosr180@gmail.com', [email])
+                  f"{request.POST.get('message')} from the mail : {email}"
+        send_mail(subject, message, 'abbosr180@gmail.com', [email])
         sent = True
         # ... send email
     return render(request, 'contact.html')
