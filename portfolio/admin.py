@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Skill, Service, Education, Experience
+from .models import Skill, Service, Education, Experience, Team
 from tinymce.widgets import TinyMCE
 from django.db import models
 
@@ -41,4 +41,13 @@ class SkillAdmin(admin.ModelAdmin):
     list_display = ['name', 'description', 'created', 'updated']
     search_fields = ['name', 'description']
     date_hierarchy = 'created'
+    list_filter = ['created', 'updated']
+
+
+@admin.register(Team)
+class TeamAdmin(admin.ModelAdmin):
+    list_display = ['name', 'job', 'image', 'created', 'updated']
+    search_fields = ['name', 'description']
+    date_hierarchy = 'created'
+    list_editable = ['job']
     list_filter = ['created', 'updated']

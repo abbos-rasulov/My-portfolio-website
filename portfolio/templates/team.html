@@ -13,7 +13,7 @@
         <div class="row">
           <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
             <div class="page-title text-center">
-              <h2>My <span class="primary">clients</span><span class="title-bg">Speech</span></h2>
+              <h2>My <span class="primary">Team</span><span class="title-bg">Team</span></h2>
               <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
                 laoreet dolore magna aliquam erat volutpat.</p>
             </div>
@@ -23,103 +23,25 @@
         <div class="row">
           <div class="col-xs-12">
             <div class="testimonials">
+                {% for team in teammates %}
               <div class="item">
                 <figure class="thumb">
-                  <div class="tm-hex" style="background-image: url('../../static/images/tm.jpg');">
+                  <div class="tm-hex" style="background-image: url('{{ team.image.url }}');">
                     <div class="hexTop"></div>
                     <div class="hexBottom"></div>
                   </div>
                   <figcaption>
-                    <h4>Adam Drigan</h4>
-                    <span>CEO, Ultra Solution</span>
+                    <h4>{{ team.name }}</h4>
+                    <span>{{ team.job }}</span>
                   </figcaption>
                 </figure>
                 <div class="text">
-                  <p>Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum
-                    formas humanitatis per seacula quarta decima. </p>
+                  <p>{{ team.description }}</p>
                 </div>
               </div>
-              <div class="item">
-                <figure class="thumb">
-                  <div class="tm-hex" style="background-image: url('../../static/images/tm-2.jpg');">
-                    <div class="hexTop"></div>
-                    <div class="hexBottom"></div>
-                  </div>
-                  <figcaption>
-                    <h4>Adam Drigan</h4>
-                    <span>CEO, Ultra Solution</span>
-                  </figcaption>
-                </figure>
-                <div class="text">
-                  <p>Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum
-                    formas humanitatis per seacula quarta decima. </p>
-                </div>
-              </div>
-              <div class="item">
-                <figure class="thumb">
-                  <div class="tm-hex" style="background-image: url('../../static/images/tm.jpg');">
-                    <div class="hexTop"></div>
-                    <div class="hexBottom"></div>
-                  </div>
-                  <figcaption>
-                    <h4>Adam Drigan</h4>
-                    <span>CEO, Ultra Solution</span>
-                  </figcaption>
-                </figure>
-                <div class="text">
-                  <p>Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum
-                    formas humanitatis per seacula quarta decima. </p>
-                </div>
-              </div>
-              <div class="item">
-                <figure class="thumb">
-                  <div class="tm-hex" style="background-image: url('../../static/images/tm-2.jpg');">
-                    <div class="hexTop"></div>
-                    <div class="hexBottom"></div>
-                  </div>
-                  <figcaption>
-                    <h4>Adam Drigan</h4>
-                    <span>CEO, Ultra Solution</span>
-                  </figcaption>
-                </figure>
-                <div class="text">
-                  <p>Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum
-                    formas humanitatis per seacula quarta decima. </p>
-                </div>
-              </div>
-              <div class="item">
-                <figure class="thumb">
-                  <div class="tm-hex" style="background-image: url('../../static/images/tm.jpg');">
-                    <div class="hexTop"></div>
-                    <div class="hexBottom"></div>
-                  </div>
-                  <figcaption>
-                    <h4>Adam Drigan</h4>
-                    <span>CEO, Ultra Solution</span>
-                  </figcaption>
-                </figure>
-                <div class="text">
-                  <p>Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum
-                    formas humanitatis per seacula quarta decima. </p>
-                </div>
-              </div>
-              <div class="item">
-                <figure class="thumb">
-                  <div class="tm-hex" style="background-image: url('../../static/images/tm-2.jpg');">
-                    <div class="hexTop"></div>
-                    <div class="hexBottom"></div>
-                  </div>
-                  <figcaption>
-                    <h4>Adam Drigan</h4>
-                    <span>CEO, Ultra Solution</span>
-                  </figcaption>
-                </figure>
-                <div class="text">
-                  <p>Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum
-                    formas humanitatis per seacula quarta decima. </p>
-                </div>
-              </div>
+                {% endfor %}
             </div>
+
           </div>
         </div> <!-- /.row -->
       </div> <!-- /.container -->

@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from .models import Skill, Service, Experience, Education, UserContact
+from .models import Skill, Service, Experience, Education, UserContact, Team
 from django.core.mail import send_mail
-
+from django.db import models
 
 def index(request):
     return render(request, 'index.html')
@@ -44,12 +44,14 @@ def works(request):
 def contact(request):
     sent = False
     if request.POST:
-        # model = UserContact()
-        # model.name = request.POST.get('name', None)
-        # model.email = request.POST.get('email', None)
-        # model.subject = request.POST.get('subject', None)
-        # model.message = request.POST.get('message', None)
-        # model.save()
+        model = UserContact()
+        model.name = request.POST.get('name', None)
+        model.email = request.POST.get('email', None)
+        model.subject = request.POST.get('subject', None)
+        model.message = request.POST.get('message', None)
+        model.created = models.DateTimeField(auto_now_add=True)
+        model.updated = models.DateTimeField(auto_now=True)
+        model.save()
         subject = request.POST.get('subject')
         email = request.POST.get('email')
         message = f"{request.POST.get('name')} who is a" \
@@ -62,4 +64,7 @@ def contact(request):
 
 
 def team(request):
-    return render(request, 'team.html')
+    teammates = Team.objects.all()
+    return render(request,
+                  'team.html',
+                  {"teammates": teammates})

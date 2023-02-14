@@ -50,6 +50,8 @@ class UserContact(models.Model):
                                blank=True,
                                null=True)
     message = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = 'usercontact'
@@ -57,3 +59,18 @@ class UserContact(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Team(models.Model):
+    name = models.CharField(max_length=200)
+    job = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='team/%Y/%m/%d')
+    description = models.TextField(max_length=500)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['-created']
+
+    def __str__(self):
+        return f"{self.name.title()} {self.job.lower()}"
