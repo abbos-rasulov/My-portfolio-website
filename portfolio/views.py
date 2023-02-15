@@ -1,7 +1,8 @@
-from django.shortcuts import render
-from .models import Skill, Service, Experience, Education, UserContact, Team
+from django.shortcuts import render, get_object_or_404
+from .models import Skill, Service, Experience, Education, UserContact, Team, Category, Work
 from django.core.mail import send_mail
 from django.db import models
+
 
 def index(request):
     return render(request, 'index.html')
@@ -38,7 +39,12 @@ def resume(request):
 
 
 def works(request):
-    return render(request, 'works.html')
+    categories = Category.objects.all()
+    works = Work.objects.all()
+    return render(request,
+                  'works.html',
+                  {'categories': categories,
+                   'works': works})
 
 
 def contact(request):
