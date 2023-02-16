@@ -31,9 +31,11 @@ def services(request):
 def resume(request):
     experiences = Experience.objects.all()
     educations = Education.objects.all()
+    skills = JobSkill.objects.all()
     ctx = {
         'educations': educations,
         'experiences': experiences,
+        'skills': skills
     }
     return render(request, 'resume.html', ctx)
 

@@ -31,8 +31,8 @@
             </ul>
           </div>
         </div>
-          {% for work in works %}
         <div class="row isotope-gutter">
+          {% for work in works %}
           <div class="col-xs-12 col-sm-6 col-md-4 {{ work.category.id }}">
             <figure class="works-item">
               <img src="{{ work.image.url }}" alt="Image">
@@ -43,8 +43,8 @@
               </figcaption>
             </figure>
           </div>
-        </div> <!-- /.row -->
                   {% endfor %}
+        </div> <!-- /.row -->
       </div> <!-- /.container -->
 
 
