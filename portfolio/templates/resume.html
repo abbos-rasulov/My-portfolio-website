@@ -61,6 +61,8 @@
                     <span>{{ exp.description|safe }}</span>
                   </div>
                 </div>
+                   {% empty %}
+                  <p>no skills yet</p>
                   {% endfor %}
                 <!-- /.history-item -->
               </div>

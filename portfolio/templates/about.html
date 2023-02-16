@@ -44,6 +44,8 @@
               <div class="progress clear">
                 <div class="skill-name">{{ skill.name }}</div>
               </div> <!-- /.progress -->
+                  {% empty %}
+                  <p>no skills yet</p>
             {% endfor %}
             </div> <!-- /.skill-wrapper -->
           </div> <!-- /.col -->

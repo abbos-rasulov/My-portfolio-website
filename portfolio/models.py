@@ -87,6 +87,7 @@ class UserContact(models.Model):
 class Team(models.Model):
     name = models.CharField(max_length=200)
     job = models.CharField(max_length=200)
+    url = models.URLField(max_length=200, null=True)
     image = models.ImageField(upload_to='team/%Y/%m/%d')
     description = models.TextField(max_length=500)
     created = models.DateTimeField(auto_now_add=True)
