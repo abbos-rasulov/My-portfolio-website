@@ -18,6 +18,7 @@ class ServiceAdmin(admin.ModelAdmin):
     search_fields = ['name', 'description']
     date_hierarchy = 'created'
     list_filter = ['created', 'updated', 'available']
+    list_editable = ('available',)
 
 
 @admin.register(Education)

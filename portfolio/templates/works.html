@@ -35,6 +35,7 @@
         </div>
         <div class="row isotope-gutter">
           {% for work in works %}
+              <a href="{{ work.url }}">
           <div class="col-xs-12 col-sm-6 col-md-4 {{ work.category.id }}">
             <figure class="works-item">
               <img src="{{ work.image.url }}" alt="Image">
@@ -45,6 +46,7 @@
               </figcaption>
             </figure>
           </div>
+              </a>
               {% empty %}
               <h4>no news yet</h4>
                   {% endfor %}

@@ -7,7 +7,7 @@ class Skill(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ['-created']
+        ordering = ['created']
         verbose_name = 'skill'
         verbose_name_plural = 'skills'
 
@@ -97,7 +97,7 @@ class Category(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ['-created']
+        ordering = ['created']
         verbose_name = 'category'
         verbose_name_plural = 'categories'
 
