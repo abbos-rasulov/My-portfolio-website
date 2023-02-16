@@ -1,25 +1,15 @@
 from django.db import models
 
 
-class JobSkill(models.Model):
+class Skill(models.Model):
     name = models.CharField(max_length=200, unique=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
     class Meta:
         ordering = ['-created']
-
-    def __str__(self):
-        return self.name
-
-
-class SoftSkill(models.Model):
-    name = models.CharField(max_length=200, unique=True)
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        ordering = ['-created']
+        verbose_name = 'skill'
+        verbose_name_plural = 'skills'
 
     def __str__(self):
         return self.name
@@ -28,7 +18,7 @@ class SoftSkill(models.Model):
 class Service(models.Model):
     name = models.CharField(max_length=220, unique=True)
     available = models.BooleanField(default=False)
-    description = models.TextField()
+    description = models.TextField(help_text='the most necessary information about your service')
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
@@ -65,7 +55,7 @@ class Experience(models.Model):
         return self.name
 
 
-class UserContact(models.Model):
+class Contact(models.Model):
     name = models.CharField(max_length=200)
     email = models.EmailField(max_length=70)
     subject = models.CharField(max_length=200,
@@ -77,8 +67,8 @@ class UserContact(models.Model):
 
     class Meta:
         ordering = ['-created']
-        verbose_name = 'usercontact'
-        verbose_name_plural = 'usercontacts'
+        verbose_name = 'contact'
+        verbose_name_plural = 'contacts'
 
     def __str__(self):
         return self.name
@@ -108,6 +98,8 @@ class Category(models.Model):
 
     class Meta:
         ordering = ['-created']
+        verbose_name = 'category'
+        verbose_name_plural = 'categories'
 
     def __str__(self):
         return self.name
@@ -115,7 +107,7 @@ class Category(models.Model):
 
 class Work(models.Model):
     name = models.CharField(max_length=200)
-    url = models.URLField(max_length=200)
+    url = models.URLField(max_length=200, help_text='the url of the project in github')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='work/%Y/%m/%d')
     description = models.TextField()

@@ -27,6 +27,8 @@
               <li><a href="#" class="active" data-filter="*">All</a></li>
                 {% for category in categories %}
               <li><a href="#" data-filter=".{{ category.id }}">{{ category.name }}</a></li>
+                    {% empty %}
+                    <h4>no news yet</h4>
                 {% endfor %}
             </ul>
           </div>
@@ -43,6 +45,8 @@
               </figcaption>
             </figure>
           </div>
+              {% empty %}
+              <h4>no news yet</h4>
                   {% endfor %}
         </div> <!-- /.row -->
       </div> <!-- /.container -->

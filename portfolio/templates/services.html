@@ -35,6 +35,8 @@
                   <p>{{ service.description|safe }}</p>
                 </div>
               </div>
+                    {% empty %}
+                    <h4>no news yet</h4>
             {% endfor %}
             </div>
 

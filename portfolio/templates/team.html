@@ -23,7 +23,7 @@
         <div class="row">
           <div class="col-xs-12">
             <div class="testimonials">
-                {% for team in teammates %}
+                {% for teammate in teammates %}
               <div class="item">
                 <figure class="thumb">
                     <a href="" ></a>
@@ -31,14 +31,16 @@
                     <div class="hexBottom"></div>
                   </div>
                   <figcaption>
-                    <h4>{{ team.name }}</h4>
-                    <span>{{ team.job }}</span>
+                    <h4>{{ teammate.name }}</h4>
+                    <span>{{ teammate.job }}</span>
                   </figcaption>
                 </figure>
                 <div class="text">
-                  <p>{{ team.description|safe }}</p>
+                  <p>{{ teammate.description|safe }}</p>
                 </div>
               </div>
+                    {% empty %}
+                    <h4>no news yet</h4>
                 {% endfor %}
             </div>
 

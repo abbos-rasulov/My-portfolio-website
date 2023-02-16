@@ -32,20 +32,23 @@
               </div>
               <!-- /.author-desc -->
             </div> <!-- /.about-author -->
-            <p>Motivated and fast-learning django backend developer looking for an impactful role. As someone who was initially a self-taught programmer, I’ve always found ways to use programming to improve my work and have successfully done so in previous roles, primarily around automating daily operations and reporting. I’ve since joined a program to improve my programming skills and have decided to pursue django backend developer on a full-time basis.</p>
+            <p>Motivated and fast-learning django backend developer looking for an impactful role.
+                As someone who was initially a self-taught programmer, I’ve always found ways to use programming to improve my work
+                and have successfully done so in previous roles, primarily around automating daily operations and reporting.
+                I’ve since joined a program to improve my programming skills and have decided to pursue django backend developer on a full-time basis.</p>
           </div> <!-- /.col -->
 
           <div class="col-xs-12 col-md-6">
             <div class="section-title clear">
-              <h3>Soft Skills</h3>
+              <h3>Skills</h3>
             </div>
             <div class="skill-wrapper">
-              {% for skill in softskills %}
+              {% for skill in skills %}
               <div class="progress clear">
                 <div class="skill-name">{{ skill.name }}</div>
               </div> <!-- /.progress -->
                   {% empty %}
-                  <p>no skills yet</p>
+                  <h4>no news yet</h4>
             {% endfor %}
             </div> <!-- /.skill-wrapper -->
           </div> <!-- /.col -->

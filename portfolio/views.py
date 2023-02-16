@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 from .models import *
 from django.core.mail import send_mail
 from django.db import models
@@ -13,15 +13,15 @@ def welcome(request):
 
 
 def about(request):
-    softskills = SoftSkill.objects.all()
+    skills = Skill.objects.all()
     ctx = {
-        'softskills': softskills,
+        'skills': skills,
     }
     return render(request, 'about.html', ctx)
 
 
 def services(request):
-    services = Service.objects.all()
+    services = Service.objects.filter(available=True)
     ctx = {
         'services': services,
     }
@@ -31,11 +31,9 @@ def services(request):
 def resume(request):
     experiences = Experience.objects.all()
     educations = Education.objects.all()
-    skills = JobSkill.objects.all()
     ctx = {
         'educations': educations,
         'experiences': experiences,
-        'skills': skills
     }
     return render(request, 'resume.html', ctx)
 
@@ -50,9 +48,8 @@ def works(request):
 
 
 def contact(request):
-    sent = False
     if request.POST:
-        model = UserContact()
+        model = Contact()
         model.name = request.POST.get('name', None)
         model.email = request.POST.get('email', None)
         model.subject = request.POST.get('subject', None)
@@ -62,11 +59,10 @@ def contact(request):
         model.save()
         subject = request.POST.get('subject')
         email = request.POST.get('email')
-        message = f"{request.POST.get('name')} who is a" \
-                  f" {subject} sent you the message : " \
+        message = f"{request.POST.get('name')} who" \
+                  f" {subject} send you the message : " \
                   f"{request.POST.get('message')} from the mail : {email}"
         send_mail(subject, message, 'abbosr180@gmail.com', [email])
-        sent = True
         # ... send email
     return render(request, 'contact.html')
 

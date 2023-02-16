@@ -1,23 +1,16 @@
 from django.contrib import admin
 from .models import *
-from tinymce.widgets import TinyMCE
 from django.db import models
+from tinymce.widgets import TinyMCE
 
 
-@admin.register(JobSkill)
-class JobSkillAdmin(admin.ModelAdmin):
+@admin.register(Skill)
+class SkillAdmin(admin.ModelAdmin):
     list_display = ['name', 'created', 'updated']
     search_fields = ['name']
     date_hierarchy = 'created'
     list_filter = ['created', 'updated']
 
-
-@admin.register(SoftSkill)
-class SoftSkillAdmin(admin.ModelAdmin):
-    list_display = ['name', 'created', 'updated']
-    search_fields = ['name']
-    date_hierarchy = 'created'
-    list_filter = ['created', 'updated']
 
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
@@ -25,37 +18,22 @@ class ServiceAdmin(admin.ModelAdmin):
     search_fields = ['name', 'description']
     date_hierarchy = 'created'
     list_filter = ['created', 'updated', 'available']
-    formfield_overrides = {
-        models.TextField: {
-            'widget': TinyMCE()
-        }
-    }
 
 
 @admin.register(Education)
 class EducationAdmin(admin.ModelAdmin):
-    list_display = ['name', 'description', 'created', 'updated']
+    list_display = ['name', 'created', 'updated']
     search_fields = ['name', 'description']
     date_hierarchy = 'created'
     list_filter = ['created', 'updated']
-    formfield_overrides = {
-        models.TextField: {
-            'widget': TinyMCE()
-        }
-    }
 
 
 @admin.register(Experience)
 class ExperienceAdmin(admin.ModelAdmin):
-    list_display = ['name', 'description', 'created', 'updated']
+    list_display = ['name', 'created', 'updated']
     search_fields = ['name', 'description']
     date_hierarchy = 'created'
     list_filter = ['created', 'updated']
-    formfield_overrides = {
-        models.TextField: {
-            'widget': TinyMCE()
-        }
-    }
 
 
 @admin.register(Team)
@@ -64,14 +42,9 @@ class TeamAdmin(admin.ModelAdmin):
     search_fields = ['name', 'description']
     date_hierarchy = 'created'
     list_filter = ['created', 'updated']
-    formfield_overrides = {
-        models.TextField: {
-            'widget': TinyMCE()
-        }
-    }
 
 
-@admin.register(UserContact)
+@admin.register(Contact)
 class UserContactAdmin(admin.ModelAdmin):
     list_display = ['name', 'email', 'subject', 'created', 'updated']
     search_fields = ['name', 'message']
@@ -95,7 +68,5 @@ class WorkAdmin(admin.ModelAdmin):
     date_hierarchy = 'created'
     list_filter = ['created', 'updated']
     formfield_overrides = {
-        models.TextField: {
-            'widget': TinyMCE()
-        }
+        models.TextField: {'widget': TinyMCE()}
     }
