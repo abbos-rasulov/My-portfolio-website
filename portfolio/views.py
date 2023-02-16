@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Skill, Service, Experience, Education, UserContact, Team, Category, Work
+from .models import *
 from django.core.mail import send_mail
 from django.db import models
 
@@ -13,9 +13,9 @@ def welcome(request):
 
 
 def about(request):
-    skills = Skill.objects.all()
+    softskills = SoftSkill.objects.all()
     ctx = {
-        'skills': skills,
+        'softskills': softskills,
     }
     return render(request, 'about.html', ctx)
 

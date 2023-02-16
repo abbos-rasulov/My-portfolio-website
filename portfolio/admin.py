@@ -1,16 +1,23 @@
 from django.contrib import admin
-from .models import Skill, Service, Education, Experience, Team, UserContact, Category, Work
+from .models import *
 from tinymce.widgets import TinyMCE
 from django.db import models
 
 
-@admin.register(Skill)
-class SkillAdmin(admin.ModelAdmin):
+@admin.register(JobSkill)
+class JobSkillAdmin(admin.ModelAdmin):
     list_display = ['name', 'created', 'updated']
     search_fields = ['name']
     date_hierarchy = 'created'
     list_filter = ['created', 'updated']
 
+
+@admin.register(SoftSkill)
+class SoftSkillAdmin(admin.ModelAdmin):
+    list_display = ['name', 'created', 'updated']
+    search_fields = ['name']
+    date_hierarchy = 'created'
+    list_filter = ['created', 'updated']
 
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
