@@ -9,12 +9,13 @@
       <a href="./" class="page-close"><i class="tf-ion-close"></i></a>
       <!-- /.close -->
 
-      <div class="container">
+     <div class="container">
         <div class="row">
           <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
             <div class="page-title text-center">
               <h2>My <span class="primary">history</span> <span class="title-bg">Resume</span></h2>
-              <p> </p>
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
+                laoreet dolore magna aliquam erat volutpat.</p>
             </div>
           </div>
         </div> <!-- /.row -->
@@ -27,18 +28,18 @@
               </div>
               <!-- /.section-title -->
               <div class="history-scroller">
-                  {% for education in educations %}
+                  {% for edu in educations %}
                 <div class="history-item">
                   <div class="history-icon">
                     <span class="history-hex"></span>
                     <i class="tf-documents5"></i>
                   </div>
                   <div class="history-text">
-                    <h5>{{ education.name }}</h5>
-                    <span>{{ education.description|safe }}</span>
+                    <h5>{{ edu.name }}</h5>
+                    <span>{{ edu.description|safe }}</span>
                   </div>
                 </div>
-                     {% endfor %}
+                  {% endfor %}
                 <!-- /.history-item -->
               </div>
             </div> <!-- /.history-block -->
@@ -50,18 +51,18 @@
               </div>
               <!-- /.section-title -->
               <div class="history-scroller">
-                  {% for experience in experiences %}
+                  {% for exp in experiences %}
                 <div class="history-item">
                   <div class="history-icon">
                     <span class="history-hex"></span>
                     <i class="tf-documents5"></i>
                   </div>
                   <div class="history-text">
-                    <h5>{{ experience.name }}</h5>
-                    <span>{{ experience.description }}</span>
+                    <h5>{{ exp.name }}</h5>
+                    <span>{{ exp.description|safe }}</span>
                   </div>
                 </div>
-                   {% endfor %}
+                  {% endfor %}
                 <!-- /.history-item -->
               </div>
             </div> <!-- /.history-block -->
